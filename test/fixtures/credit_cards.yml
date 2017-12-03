@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_nr: 1
+  print_name: MyString
+  billing_date: 14
+  billing_month: 11
+  expire_month: 
+  expire_year: 2020
+  cvv: 1
+  limit: 1
+
+two:
+  card_nr: 1
+  print_name: MyString
+  billing_date: 14
+  billing_month: 11
+  expire_month: 
+  expire_year: 2020
+  cvv: 1
+  limit: 1
