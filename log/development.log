@@ -28332,3 +28332,154 @@ Migrating to RenameUserPwdDigest (20171203230125)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "credit_cards"[0m
+Started GET "/credit_cards/add_card" for 127.0.0.1 at 2017-12-03 23:32:39 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/credit_cards/add_card"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (90.9ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.6ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.9ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (183.7ms)
+Started GET "/credit_cards/add_cards" for 127.0.0.1 at 2017-12-03 23:33:02 -0200
+  
+ActionController::RoutingError (No route matches [GET] "/credit_cards/add_cards"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (5.2ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.3ms)
+Started GET "/credit_cards/list_cards" for 127.0.0.1 at 2017-12-03 23:33:10 -0200
+Processing by CreditCardsController#list_cards as HTML
+  [1m[36mCreditCard Load (0.7ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-03 23:33:32 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"123456789012345", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"123456789011a2.233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890123456", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Mar", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"6781", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890112233", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "billing_month"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}], "credit_card"=>{}}
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "current_balance", "expire_year", "billing_month") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123456"], ["print_name", "Maria de Lourdes"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", 200000], ["created_at", "2017-12-04 01:33:32.575233"], ["updated_at", "2017-12-04 01:33:32.575233"], ["current_balance", 200000], ["expire_year", 2019], ["billing_month", 7]]
+  [1m[35m (134.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "123456789012345"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "123456789011a2.233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890112233"], ["LIMIT", 1]]
+Completed 201 Created in 285ms (Views: 0.3ms | ActiveRecord: 141.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "credit_cards"[0m
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+  [1m[35mSQL (76.4ms)[0m  [1m[31mDELETE FROM "credit_cards" WHERE "credit_cards"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "credit_cards"[0m
+Started GET "/users/list_users" for 127.0.0.1 at 2017-12-04 00:28:35 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#list_users as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/add_users" for 127.0.0.1 at 2017-12-04 00:30:53 -0200
+Processing by UsersController#add_users as HTML
+  Parameters: {"_json"=>[{"Nome"=>"Oberdan", "Sobrenome"=>"de Abreu Araujo", "CPF"=>"13476531716", "email"=>"oberdan@oberdan.com.br", "Senha"=>"1234", "Senha Confirmacao"=>"1234"}], "user"=>{}}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."cpf" = ? LIMIT ?[0m  [["cpf", "13476531716"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."cpf" = ? LIMIT ?[0m  [["cpf", "13476531716"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Oberdan"], ["last_name", "de Abreu Araujo"], ["cpf", "13476531716"], ["email", "oberdan@oberdan.com.br"], ["password_digest", "$2a$10$YYs4DxHoyVEqyUqb.KDUKO/ogUvP9jk20uXYCRtrWLkUVmqp14QNu"], ["created_at", "2017-12-04 02:30:53.776864"], ["updated_at", "2017-12-04 02:30:53.776864"]]
+  [1m[35m (69.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 269ms (Views: 0.2ms | ActiveRecord: 71.9ms)
+
+
+Started POST "/users/add_users" for 127.0.0.1 at 2017-12-04 00:31:08 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#add_users as HTML
+  Parameters: {"_json"=>[{"Nome"=>"Oberdan", "Sobrenome"=>"de Abreu Araujo", "CPF"=>"13476531716", "email"=>"oberdan@oberdan.com.br", "Senha"=>"1234", "Senha Confirmacao"=>"1234"}], "user"=>{}}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."cpf" = ? LIMIT ?[0m  [["cpf", "13476531716"], ["LIMIT", 1]]
+Completed 201 Created in 215ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
