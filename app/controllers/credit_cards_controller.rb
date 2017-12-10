@@ -1,9 +1,7 @@
 class CreditCardsController < ApplicationController
 	require 'credit_card_assistance_class'
 
-	skip_before_action :verify_authenticity_token
-
-	def list_cards
+    def list_cards
 		
 		#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
 	  	ccard_assistance = CreditCardAssistance.instance()

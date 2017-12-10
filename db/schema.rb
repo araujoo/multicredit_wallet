@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204043200) do
+ActiveRecord::Schema.define(version: 20171210055907) do
 
   create_table "card_wallets", force: :cascade do |t|
     t.integer  "limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_card_wallets_on_user_id"
   end
 
   create_table "credit_cards", force: :cascade do |t|
@@ -24,12 +26,22 @@ ActiveRecord::Schema.define(version: 20171204043200) do
     t.integer  "billing_date"
     t.integer  "expire_month"
     t.string   "cvv"
-    t.integer  "limit"
+    t.string   "limit"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "current_balance"
     t.integer  "expire_year"
     t.integer  "billing_month"
+    t.integer  "card_wallet_id"
+    t.index ["card_wallet_id"], name: "index_credit_cards_on_card_wallet_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "user_wallets", force: :cascade do |t|
@@ -44,8 +56,10 @@ ActiveRecord::Schema.define(version: 20171204043200) do
     t.string   "cpf"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
   end
 
 end

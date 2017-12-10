@@ -1,10 +1,17 @@
 require 'singleton'
+require 'dao_classes/user_dao'
+
 class UserAssistance
 	include Singleton
 
 	def list_users
+
+		#recupera a instancia da classe DAO
+		user_dao = UserDao.instance()
+
+
 		#realiza a consulta ao banco
-		all_users = User.all
+		all_users = user_dao.get_users()
 
 		#inicializa o dado de retorno
 		users_response = Array.new
@@ -24,8 +31,11 @@ class UserAssistance
 
 	def add_users(parsed_json_users)
 
+		#recupera a instancia da classe DAO
+		user_dao = UserDao.instance()
+
 		#inicializa o array com as mensagens de resposta
-	  	message = Array.new
+	  	user_instances = Array.new
 
 	  	#se no json veio apenas um usuario e nao uma lista de usuarios
 	  	#inserir este usuario em um array para reaproveitar a logica de processamento
@@ -36,77 +46,42 @@ class UserAssistance
 	  		parsed_json_users_arr = parsed_json_users
 	  	end
 
-	  	#inicializa o buffer de criacao de novo usuario
-	  	new_user = 0
-	  	parsed_json_users_arr.each_with_index do |u, i|
-
-  			new_user = User.new(
-  				:first_name => u['Nome'].to_s,
-  				:last_name => u['Sobrenome'],
-  				:cpf => u['CPF'],
-  				:email => u['email'],
-  				:password => u['Senha'],
-  				:password_confirmation => u['Confirmacao Senha'],
-  			)
-
-  			if !new_user.valid?
-				#em caso de falha, retorna um JSON indicando os usuarios que falharam na validacao
-				#e quais obtiveram sucesso ao serem gravados no banco
-				message.push({
-					:object => "#{i+1}",
-					:errors => new_user.errors.messages
-				})
-			else
-				if new_user.save
-					message.push({
-						:object => "#{i+1}",
-						:message => "Usuario \"#{u['Nome']} #{u['Sobrenome']}\" foi cadastrado com sucesso "
-					})
-				else
-					message.push({
-						:object => "#{i+1}",
-						:error => "Falha ao gravar usuario \"#{u['Nome']} #{u['Sobrenome']}\""
-					})
-				end
-			end
-		
-		end
-		message.to_json
+	  	#monta o array com as instancias dos usuarios que serao criados no banco
+	  	parsed_json_users_arr.each do |u|
+	  		user_instances.push(
+	  			new_user = User.new(
+	  				:first_name => u['Nome'].to_s,
+	  				:last_name => u['Sobrenome'],
+	  				:cpf => u['CPF'],
+	  				:email => u['email'],
+	  				:password => u['Senha'],
+	  				:password_confirmation => u['Confirmacao Senha'],
+	  				:card_wallet => CardWallet.new()
+  				)
+	  		)
+	  	end
+	  	message = user_dao.insert_users(user_instances)
+	  	message.to_json
 	end
 
 	def remove_user(user_to_remove)
 
-		#inicializa array de mensagens
-		message = Array.new
+		#recupera a instancia da classe DAO
+		user_dao = UserDao.instance()
 
 	  	if user_to_remove != nil
-	  		user = User.find_by( :cpf => user_to_remove['CPF'] )
-	  		if user != nil
-				if user.delete
-					message.push({
-						:message => "Usuario #{user.first_name} #{user.last_name} removido com sucesso"
-					})
-				else
-					message.push({
-						:error => "Falha ao remover a o usuario #{user.first_name} #{user.last_name}"
-					})					
-				end
-			else
-				message.push({
-					:errors => 'Usuario nao encontrado'
-				})				
-	  		end
+	  		message = user_dao.remove_user(user_to_remove['email'])
+	  		message.to_json
 	  	end
-		message.to_json
 	end
 
 	def update_user(user_to_update)
 
-		#inicializa o array com os objetos falhos
-		message = Array.new
+		#recupera a instancia da classe DAO
+		user_dao = UserDao.instance()
 
 	  	if user_to_update != nil
-	  		user = User.find_by( :CPF => user_to_update['CPF'] )
+	  		user = get_user(user_to_update['email'])
 	  		if user != nil
 	  			if user_to_update['Nome']
 	  				user.first_name = user_to_update['Nome']
@@ -119,23 +94,9 @@ class UserAssistance
 				if user_to_update['email']
 					user.email = user_to_update['email']
 				end
-
-				if !user.valid?
-					message.push({
-						:errors => user.errors.messages
-					})
-				else
-					if user.save
-						message.push({
-							:message => "Dados do cartao #{user_to_update['user_nr']} atualizados com sucesso"
-						})
-					else
-						message.push({
-							:error => "Falha ao atualizar os dados do cartao #{user_to_update['user_nr']}"
-						})
-					end
-				end
+				message = user_dao.update_user(user)
 			else
+				message = Array.new
 				message.push({
 					:errors => 'Cartao nao encontrado'
 				})

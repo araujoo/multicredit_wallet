@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  #devise_for :user
+
   get 'credit_cards/list_cards'
   post 'credit_cards/add_card'
   delete 'credit_cards/remove_card'

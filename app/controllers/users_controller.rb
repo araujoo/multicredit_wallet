@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 	require 'user_assistance_class'
-
-	skip_before_action :verify_authenticity_token
-
+	require 'application_assistance'
+	
 	def list_users
 		
 		#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
@@ -18,9 +17,10 @@ class UsersController < ApplicationController
 	  	#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
 	  	user_assistance = UserAssistance.instance()
 
-	  	#realiza o processo de insercao do cartao de credito atraves da classe de assistencia,
-	  	#retornando, via json, o resultado da operacao de adicao de cartao de credito
+	  	#realiza o processo de insercao do usuario atraves da classe de assistencia,
+	  	#retornando, via json, o resultado da operacao de adicao de usuario
 	  	render json: user_assistance.add_users(users), status: 201
+	  	#render json: request.headers["HTTP_AUTH_TOKEN"].to_json, status: 201
 	end
 
 	def remove_user

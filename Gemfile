@@ -5,8 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#gem para criptografia de senha
 gem 'bcrypt'
+#gem para geracao de token de autenticacao
+gem 'simple_token_authentication'
+gem 'devise'
+gem 'devise_invitable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'

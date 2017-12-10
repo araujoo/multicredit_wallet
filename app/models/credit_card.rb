@@ -1,5 +1,7 @@
 class CreditCard < ApplicationRecord
 
+      belongs_to :card_wallet
+
 #      #numero do cartao
       validates :card_nr, presence: { message: 'Campo "Numero do Cartao" e de preenchimento obrigatorio' }
       validates :card_nr, uniqueness: { message: "Cartao \"%{value}\" ja cadastrado" }
@@ -29,9 +31,9 @@ class CreditCard < ApplicationRecord
       validates :cvv, length: { is: 3, message: 'Campo "CVV" deve conter 3 numeros' }
       validates :cvv, numericality: { only_integer: { message: 'Campo "CVV" deve conter apenas numeros' } }
 
-
       #limite
       validates :limit, presence: { message: 'Campo "limit" e de preenchimento obrigatorio' }
+      validates_format_of :limit, :with => /(\A(\.|[0-9]*\.))[0-9]{2}\z/, :message => 'Campo "Limite" invalido. Favor inserir um valor no formato "123.00"'
 
       def expire_date_must_be_valid_date
             begin
@@ -51,8 +53,6 @@ class CreditCard < ApplicationRecord
 
 
       def expire_date_must_not_be_in_past
-            #errors.add(:expire_year, "ano = #{Date.today.year}")
-
             today_year = Date.today.year.to_i
             if ((expire_year != nil && expire_month != nil) && ( expire_year <= Date.today.year || ( expire_year == Date.today.year && expire_month <= Date.today.month)) ) 
                   errors.add(:expire_year, " today_year = #{today_year} ano = #{expire_year} expire_month = #{expire_month} Date.today.year = #{Date.today.year}, Date.today.month = #{Date.today.month} Ano ou mês no passado. Favor inserir ano e mes no futuro")

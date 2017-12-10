@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
 		assert !user.valid?
 	end
 
-	test 'cpf should be unique' do
+	test 'email should be unique' do
 		user = User.new( 
 			:first_name => "Teste1",
 			:last_name => "Teste1 Sobrenome",
@@ -22,7 +22,7 @@ class UserTest < ActiveSupport::TestCase
 			:first_name => "Teste2",
 			:last_name => "Teste2 Sobrenome",
 			:cpf => "11144477731",
-			:email => "T este@teste.com.br",
+			:email => "teste@teste.com.br",
 			:password => 'abc',
 			:password_confirmation => 'abc'
 		)
@@ -66,4 +66,14 @@ class UserTest < ActiveSupport::TestCase
 		)
 		assert !user.valid?
 	end
+
+	test 'user should inform password' do
+		user = User.new( 
+			:first_name => "Teste1",
+			:last_name => "Teste1 Sobrenome",
+			:cpf => "111444771796237171342",
+			:email => "teste@teste.com.br",
+		)
+		assert !user.valid?
+	end	
 end

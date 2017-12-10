@@ -1,12 +1,16 @@
  require 'singleton'
+ require 'dao_classes/credit_card_dao'
 
  class CreditCardAssistance
  	include Singleton
 
+ 	@wallet = nil
+
 	def list_cards
-		
+		ccards_dao = CreditCardDao.instance()
+
 		#realiza a consulta ao banco
-		credit_cards = CreditCard.all
+		credit_cards = ccards_dao.get_credit_cards()
 
 		#inicializa o dado de retorno
 		user_cards = Array.new
@@ -31,8 +35,12 @@
 
 
  	def add_cards(parsed_json_cards)
-	  	#inicializa o array com as mensagens de resposta
-	  	message = Array.new
+
+ 		#recupera a instancia da classe DAO
+ 		ccards_dao = CreditCardDao.instance()
+
+ 		#inicializa o array de cartoes
+ 		card_array = Array.new
 
 	  	#se foi recebido apenas um cartao, e nao um array de objetos,
 	  	#adicionar o objeto a um array para que a logica de processamento
@@ -44,104 +52,46 @@
 	  		parsed_json_cards_arr = parsed_json_cards
 	  	end
 
-
-	  	#inicializa o buffer de criacao de novo cartao
-	  	new_credit_card = 0
-	  	parsed_json_cards_arr.each_with_index do |c, i|
-	  		
-	  		#testa para ver se o limite do cartao de credito esta no formato adequado
-	  		#caso contrario, exibe a mensagem de erro
-	  		
-  			new_credit_card = CreditCard.new(
-  				:card_nr => c['Numero Cartao'].to_s,
-  				:print_name => c['Nome Impresso'],
-  				:billing_date => c['Dia de Cobranca'],
-  				:billing_month => c['Mes de Cobranca'],
-  				:expire_month => c['Mes de Expiracao'],
-  				:expire_year => c['Ano de Expiracao'],
-  				:cvv => c['CVV'],
-  				:limit => "#{(c['Limite'].to_f.truncate(3)*100).to_i}",
-  				:current_balance => "#{(c['Limite'].to_f.truncate(3)*100).to_i}"
-  			)
-
-  			if !new_credit_card.valid?
-				#em caso de falha, retorna um JSON indicando qual foi o objeto da lista de cartoes
-				#que falhou e quais foram os erros que impossibilitaram o cadastramento
-				message.push({
-					:object => "#{i+1}",
-					:errors => new_credit_card.errors.messages
-				})
-			else
-	  			str_limit = c['Limite']
-		  		if str_limit && !str_limit.match('(^(\.|[0-9]*\.))[0-9]{2}$')
-		  			new_credit_card.errors.add(:limit, 'Campo "Limite" invalido. Favor inserir um valor no formato "123.00"')
-		  			message.push({
-						:object => "#{i+1}",
-						:errors => new_credit_card.errors.messages
-					})
-					#amarra o erro na estrutura de erros e passa para proxima iteracao
-					next
-				elsif !str_limit
-					new_credit_card.errors.add(:limit, 'Campo "Limite" invalido é preenchimento obrigatorio')
-		  			message.push({
-						:object => "#{i+1}",
-						:errors => new_credit_card.errors.messages
-					})
-		  			#amarra o erro na estrutura de erros e passa para proxima iteracao
-					next
-			  	
-				else
-					if new_credit_card.save
-						message.push({
-							:object => "#{i+1}",
-							:message => "Cartao de nr \"#{c['Numero Cartao']}\" foi cadastrado com sucesso "
-						})
-					else
-						message.push({
-							:object => "#{i+1}",
-							:error => "Falha ao gravar cartão \"#{c['Numero Cartao']}\""
-						})
-					end
-				end
-			end
-		
+	  	#monta o array com as instancias que serao persistidas no banco
+	  	parsed_json_cards_arr.each do |c|
+	  		card_array.push(
+	  			new_credit_card = CreditCard.new(
+	  				:card_nr => c['Numero Cartao'].to_s,
+	  				:print_name => c['Nome Impresso'],
+	  				:billing_date => c['Dia de Cobranca'],
+	  				:billing_month => c['Mes de Cobranca'],
+	  				:expire_month => c['Mes de Expiracao'],
+	  				:expire_year => c['Ano de Expiracao'],
+	  				:cvv => c['CVV'],
+	  				:limit => c['Limite'],
+	  				:current_balance => "#{(c['Limite'].to_f.truncate(3)*100).to_i}",
+	  				:card_wallet => get_user_wallet(c['email'])
+			))
 		end
+
+		#passa o array de cartoes para a classe DAO persistir no banco
+		message = ccards_dao.insert_credit_cards(card_array)
 		message.to_json
  	end
 
 	def remove_card(card_to_remove)
 
-		#inicializa array de mensagens
-		message = Array.new
+ 		#recupera a instancia da classe DAO
+ 		ccards_dao = CreditCardDao.instance()
 
 	  	if card_to_remove != nil
-	  		card = CreditCard.find_by( :card_nr => card_to_remove['Numero Cartao'] )
-	  		if card != nil
-				if card.delete
-					message.push({
-						:message => "Cartao #{card_to_remove['Numero Cartao']} removido com sucesso"
-					})
-				else
-					message.push({
-						:error => "Falha ao remover o cartao #{card_to_remove['Numero Cartao']}"
-					})					
-				end
-			else
-				message.push({
-					:errors => 'Cartao nao encontrado'
-				})				
-	  		end
+			message = ccards_dao.remove_card(card_to_remove['Numero Cartao'] )
+			message.to_json
 	  	end
-		message.to_json
 	end
 
 	def update_card(card_to_update)
 
-		#inicializa o array com os objetos falhos
-		message = Array.new
-
+		#recupera a instancia da classe DAO
+		ccards_dao = CreditCardDao.instance()
+	  	
 	  	if card_to_update != nil
-	  		card = CreditCard.find_by( :card_nr => card_to_update['Numero Cartao'] )
+	  		card = ccards_dao.get_card(card_to_update['Numero Cartao'] )
 	  		if card != nil
 	  			if card_to_update['Nome Impresso']
 	  				card.print_name = card_to_update['Nome Impresso']
@@ -171,27 +121,21 @@
 					card.limit = "#{(card_to_update['Limite'].to_f.truncate(3)*100).to_i}"
 				end
 
-				if !card.valid?
-					message.push({
-						:errors => card.errors.messages
-					})
-				else
-					if card.save
-						message.push({
-							:message => "Salvei! Dados do cartao #{card_to_update['card_nr']} atualizados com sucesso"
-						})
-					else
-						message.push({
-							:error => "Falha ao atualizar os dados do cartao #{card_to_update['card_nr']}"
-						})
-					end
-				end
+				message = ccards_dao.update_card(card)
 			else
+				message = Array.new
 				message.push({
 					:errors => 'Cartao nao encontrado'
 				})
-	  		end
-	  	end
-	  	message.to_json
+			end
+			message.to_json
+		end
+	end
+
+	def get_user_wallet(email)
+		if !@wallet
+			#@wallet = ((User.find_by(:email => email)).card_wallet)
+		end
+		@wallet
 	end
  end
