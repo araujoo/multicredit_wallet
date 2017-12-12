@@ -1,5 +1,6 @@
 require 'singleton'
 require 'dao_classes/user_dao'
+require 'application_assistance'
 
 class UserAssistance
 	include Singleton
@@ -56,7 +57,7 @@ class UserAssistance
 	  				:email => u['email'],
 	  				:password => u['Senha'],
 	  				:password_confirmation => u['Confirmacao Senha'],
-	  				:card_wallet => CardWallet.new()
+	  				:card_wallet => CardWallet.new(:limit => 0)
   				)
 	  		)
 	  	end
@@ -81,7 +82,7 @@ class UserAssistance
 		user_dao = UserDao.instance()
 
 	  	if user_to_update != nil
-	  		user = get_user(user_to_update['email'])
+	  		user = user_dao.get_user({:email => user_to_update['email']})
 	  		if user != nil
 	  			if user_to_update['Nome']
 	  				user.first_name = user_to_update['Nome']
@@ -103,5 +104,12 @@ class UserAssistance
 	  		end
 	  	end
 	  	message.to_json
+	end
+
+	def sign_out
+		email = params[:email]
+		password = params[:Senha]
+		app_assist = ApplicationAssistance.instance()
+		app_assist.sign_in(email, password)
 	end
 end

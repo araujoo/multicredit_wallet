@@ -43,7 +43,7 @@ class UserDao
 		#inicializa o array com as mensagens de resultado
 	  	message = Array.new
 
-		user = get_user(email)
+		user = get_user({:email => email})
   		if user != nil
 			if user.destroy
 				message.push({
@@ -74,19 +74,19 @@ class UserDao
 		else
 			if user.save
 				message.push({
-					:message => "Dados do cartao #{user_to_update['user_nr']} atualizados com sucesso"
+					:message => "Dados do cartao #{user['user_nr']} atualizados com sucesso"
 				})
 			else
 				message.push({
-					:error => "Falha ao atualizar os dados do cartao #{user_to_update['user_nr']}"
+					:error => "Falha ao atualizar os dados do cartao #{user['user_nr']}"
 				})
 			end
 		end
 	end
 
 
-	def get_user(email)
-		User.find_by(:email => email)
+	def get_user(param_hash)
+		User.where(param_hash).first
 	end
 
 end

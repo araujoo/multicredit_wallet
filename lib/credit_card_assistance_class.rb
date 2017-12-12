@@ -1,10 +1,10 @@
  require 'singleton'
  require 'dao_classes/credit_card_dao'
+ require 'dao_classes/user_dao'
+ require 'application_assistance'
 
  class CreditCardAssistance
  	include Singleton
-
- 	@wallet = nil
 
 	def list_cards
 		ccards_dao = CreditCardDao.instance()
@@ -34,7 +34,7 @@
 	end
 
 
- 	def add_cards(parsed_json_cards)
+ 	def add_cards(parsed_json_cards, token)
 
  		#recupera a instancia da classe DAO
  		ccards_dao = CreditCardDao.instance()
@@ -65,7 +65,7 @@
 	  				:cvv => c['CVV'],
 	  				:limit => c['Limite'],
 	  				:current_balance => "#{(c['Limite'].to_f.truncate(3)*100).to_i}",
-	  				:card_wallet => get_user_wallet(c['email'])
+	  				:card_wallet => get_user_wallet(token)
 			))
 		end
 
@@ -132,10 +132,11 @@
 		end
 	end
 
-	def get_user_wallet(email)
-		if !@wallet
-			#@wallet = ((User.find_by(:email => email)).card_wallet)
+	def get_user_wallet(token)
+		user_dao = UserDao.instance()
+		user = user_dao.get_user({:authentication_token => token})
+		if user
+			user.card_wallet	
 		end
-		@wallet
 	end
  end

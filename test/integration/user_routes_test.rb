@@ -11,7 +11,7 @@ class UserRoutesTest < ActionDispatch::IntegrationTest
 
 	test 'creating users' do 
 
-		post "/users/add_users", 
+		post "/sign_up", 
 		params: [{
 			:first_name => "Teste1",
 			:last_name => "Teste1 Sobrenome",

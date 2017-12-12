@@ -1,10 +1,11 @@
 class CreditCard < ApplicationRecord
 
       belongs_to :card_wallet
+      has_and_belongs_to_many :purchases
 
-#      #numero do cartao
+      #numero do cartao
       validates :card_nr, presence: { message: 'Campo "Numero do Cartao" e de preenchimento obrigatorio' }
-      validates :card_nr, uniqueness: { message: "Cartao \"%{value}\" ja cadastrado" }
+      validates :card_nr, uniqueness: { message: "Cartao \"%{value}\" ja cadastrado", scope: :card_wallet_id }
       validates :card_nr, length: { is: 16, message: 'O campo Numero do Cartao deve conter exatamente 16 digitos' }
       validates :card_nr, numericality: { only_integer: { message: 'Campo "Numero do Cartao" deve conter apenas numeros' } }
 

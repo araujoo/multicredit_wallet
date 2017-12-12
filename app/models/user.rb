@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  # Include default devise modules.
-	#acts_as_token_authenticatable
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
 	has_one :card_wallet, dependent: :destroy
 	has_many :purchases, dependent: :destroy
@@ -18,9 +19,6 @@ class User < ApplicationRecord
     #validates :cpf, uniqueness: {message: "CPF \"%{value}\" ja cadastrado." }
     validates :cpf, numericality: { only_integer: { message: "Campo \"CPF\" deve conter apenas numeros" } }
 
-    #essa validacao ja garante a falha caso o usuario nao informe senha
-	has_secure_password
-
     def unique_email
     	if email != nil
     		user = User.find_by(:email => email)
@@ -29,7 +27,5 @@ class User < ApplicationRecord
     		end
     	end
     end
-
-
 
 end

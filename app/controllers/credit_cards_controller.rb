@@ -1,5 +1,9 @@
+require 'credit_card_assistance_class'
+require 'application_assistance'
+
 class CreditCardsController < ApplicationController
-	require 'credit_card_assistance_class'
+	
+	before_action :check_user_auth
 
     def list_cards
 		
@@ -18,7 +22,7 @@ class CreditCardsController < ApplicationController
 
 	  	#realiza o processo de insercao do cartao de credito atraves da classe de assistencia,
 	  	#retornando, via json, o resultado da operacao de adicao de cartao de credito
-	  	render json: ccard_assistance.add_cards(cards), status: 201
+	  	render json: ccard_assistance.add_cards(cards, request.headers["HTTP_AUTH_TOKEN"]), status: 201
 	end
 
 	def remove_card
@@ -38,6 +42,15 @@ class CreditCardsController < ApplicationController
 	  	ccard_assistance = CreditCardAssistance.instance()
 
 		render json: ccard_assistance.update_card(card), status: 200
+	end
+
+
+	private
+	def check_user_auth
+		app_assist = ApplicationAssistance.instance()
+		if !app_assist.check_user_auth(request.headers["HTTP_AUTH_TOKEN"])
+			render json: 'Usuario nao autenticado', status: 401
+		end
 	end
 
 end

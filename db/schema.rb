@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210055907) do
+ActiveRecord::Schema.define(version: 20171212012001) do
+
+  create_table "CreditCards_Purchases", id: false, force: :cascade do |t|
+    t.integer "purchase_id",    null: false
+    t.integer "credit_card_id", null: false
+    t.index ["credit_card_id", "purchase_id"], name: "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id"
+    t.index ["purchase_id", "credit_card_id"], name: "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id"
+  end
 
   create_table "card_wallets", force: :cascade do |t|
     t.integer  "limit"
@@ -36,11 +43,18 @@ ActiveRecord::Schema.define(version: 20171210055907) do
     t.index ["card_wallet_id"], name: "index_credit_cards_on_card_wallet_id"
   end
 
-  create_table "purchases", force: :cascade do |t|
-    t.integer  "value"
+  create_table "paid_withs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
+    t.integer  "card_wallet_id"
+    t.index ["card_wallet_id"], name: "index_purchases_on_card_wallet_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -55,10 +69,10 @@ ActiveRecord::Schema.define(version: 20171210055907) do
     t.string   "last_name"
     t.string   "cpf"
     t.string   "email"
-    t.string   "password_digest"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "authentication_token", limit: 30
+    t.string   "encrypted_password"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
   end
 

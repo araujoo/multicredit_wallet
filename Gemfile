@@ -8,7 +8,7 @@ end
 #gem para criptografia de senha
 gem 'bcrypt'
 #gem para geracao de token de autenticacao
-gem 'simple_token_authentication'
+#gem 'simple_token_authentication'
 gem 'devise'
 gem 'devise_invitable'
 
