@@ -21,7 +21,7 @@ class ApplicationAssistance < ApplicationController
 		elsif user.valid_password?(password)
 			user.authentication_token = generate_token
 			user_dao.update_user(user)
-			text = 'Token' + user.authentication_token
+			text = 'Token' + ' ' + user.authentication_token
 			status = 200
 		end
 		{:message => text, :status => status}
@@ -44,6 +44,7 @@ class ApplicationAssistance < ApplicationController
 			text = 'Nao foi possivel realizar o logout'
 			status = 404
 		end
+		{:message => text, :status => status}
 	end	
 
     def check_user_auth(token)

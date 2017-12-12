@@ -34834,3 +34834,74 @@ Can't verify CSRF token authenticity.
 Completed 201 Created in 123ms (Views: 0.2ms | ActiveRecord: 5.1ms)
 
 
+Started PUT "/sign_out" for 127.0.0.1 at 2017-12-12 00:45:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#sign_out as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00"}, {"Numero Cartao"=>"1234567890123457", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890123497", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}], "user"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "d7e61a0c4114186a7cd8b7f26668eeed0d966849a36e4f3de4f9be9e2e66738f"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "d7e61a0c4114186a7cd8b7f26668eeed0d966849a36e4f3de4f9be9e2e66738f"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["authentication_token", nil], ["updated_at", "2017-12-12 02:45:17.696956"], ["id", 1]]
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 120ms (Views: 0.5ms | ActiveRecord: 78.8ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 00:47:27 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"maria@lourdes.com.br", "Senha"=>"123456", "user"=>{"email"=>"maria@lourdes.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["updated_at", "2017-12-12 02:47:28.747394"], ["id", 3]]
+  [1m[35m (96.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 915ms (Views: 0.4ms | ActiveRecord: 99.1ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 00:48:02 -0200
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"maria@lourdes.com.br", "Senha"=>"123456", "user"=>{"email"=>"maria@lourdes.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 00:48:22 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00"}, {"Numero Cartao"=>"1234567890123457", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}, {"Numero Cartao"=>"1234567890123497", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00"}], "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "current_balance", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123456"], ["print_name", "Oberdan Araujo"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "2000.00"], ["created_at", "2017-12-12 02:48:22.861399"], ["updated_at", "2017-12-12 02:48:22.861399"], ["current_balance", 200000], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 3]]
+  [1m[35m (73.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123466"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123466"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "current_balance", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123466"], ["print_name", "Oberdan Araujo"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "4000.00"], ["created_at", "2017-12-12 02:48:22.946615"], ["updated_at", "2017-12-12 02:48:22.946615"], ["current_balance", 400000], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 3]]
+  [1m[35m (69.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123457"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123457"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "current_balance", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123457"], ["print_name", "Maria de Lourdes"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "2000.00"], ["created_at", "2017-12-12 02:48:23.025295"], ["updated_at", "2017-12-12 02:48:23.025295"], ["current_balance", 200000], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 3]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123497"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123497"], ["card_wallet_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "current_balance", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123497"], ["print_name", "Maria de Lourdes"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "2000.00"], ["created_at", "2017-12-12 02:48:23.136373"], ["updated_at", "2017-12-12 02:48:23.136373"], ["current_balance", 200000], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 3]]
+  [1m[35m (67.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 441ms (Views: 0.3ms | ActiveRecord: 321.6ms)
+
+

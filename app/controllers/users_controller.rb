@@ -52,6 +52,12 @@ class UsersController < ApplicationController
 		render json: result[:message], status: result[:status]
 	end
 
+	def sign_out
+		app_assist = ApplicationAssistance.instance()
+		result = app_assist.sign_out(request.headers["HTTP_AUTH_TOKEN"])
+		render json: result[:message], status: result[:status]
+	end
+
 	private
 	def check_user_auth
 		app_assist = ApplicationAssistance.instance()

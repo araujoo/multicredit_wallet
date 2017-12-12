@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'users/list_users'
   post 'sign_up', to: 'users#add_users'
   post 'sign_in', to: 'users#sign_in'
+  put 'sign_out', to: 'users#sign_out'
   delete 'users/remove_user'
   put 'users/update_user'
 
