@@ -34905,3 +34905,1568 @@ Can't verify CSRF token authenticity.
 Completed 201 Created in 441ms (Views: 0.3ms | ActiveRecord: 321.6ms)
 
 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.5ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Started POST "/credit_cards/list_cards" for 127.0.0.1 at 2017-12-12 01:04:11 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/credit_cards/list_cards"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (8.1ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.7ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.0ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.2ms)
+Started GET "/credit_cards/list_cards" for 127.0.0.1 at 2017-12-12 01:04:16 -0200
+Processing by CreditCardsController#list_cards as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 200 OK in 158ms (Views: 0.5ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeCurrencyFieldsType (20171212160410)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acard_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acard_wallets_on_user_id" ON "acard_wallets" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "acard_wallets" ("id","limit","created_at","updated_at","user_id")
+                     SELECT "id","limit","created_at","updated_at","user_id" FROM "card_wallets"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "card_wallets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "card_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acard_wallets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acard_wallets_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_card_wallets_on_user_id" ON "card_wallets" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "card_wallets" ("id","limit","created_at","updated_at","user_id")
+                     SELECT "id","limit","created_at","updated_at","user_id" FROM "acard_wallets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acard_wallets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acredit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "current_balance" integer, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_acredit_cards_on_card_wallet_id" ON "acredit_cards" ("card_wallet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "acredit_cards" ("id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","current_balance","expire_year","billing_month","card_wallet_id")
+                     SELECT "id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","current_balance","expire_year","billing_month","card_wallet_id" FROM "credit_cards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "credit_cards"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "current_balance" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acredit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acredit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "credit_cards" ("id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","current_balance","expire_year","billing_month","card_wallet_id")
+                     SELECT "id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","current_balance","expire_year","billing_month","card_wallet_id" FROM "acredit_cards"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acredit_cards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apurchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_apurchases_on_user_id" ON "apurchases" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_apurchases_on_card_wallet_id" ON "apurchases" ("card_wallet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "apurchases" ("id","value","created_at","updated_at","user_id","card_wallet_id")
+                     SELECT "id","value","created_at","updated_at","user_id","card_wallet_id" FROM "purchases"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "purchases"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_apurchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_apurchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_apurchases_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_apurchases_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_card_wallet_id" ON "purchases" ("card_wallet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_user_id" ON "purchases" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "purchases" ("id","value","created_at","updated_at","user_id","card_wallet_id")
+                     SELECT "id","value","created_at","updated_at","user_id","card_wallet_id" FROM "apurchases"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "apurchases"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171212160410"]]
+  [1m[35m (133.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_purchase_id_and_credit_card_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_purchase_id_and_credit_card_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCreditCard Load (2.7ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "credit_cards"[0m
+Started GET "/credit_cards/list_cards" for 127.0.0.1 at 2017-12-12 20:33:19 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditCardsController#list_cards as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 200 OK in 162ms (Views: 0.3ms | ActiveRecord: 4.4ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:40:29 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 3.4ms)
+
+
+  
+NameError (undefined local variable or method `ccard_assistance' for #<CardWalletsController:0x00007f73f0cc5c20>):
+  
+app/controllers/card_wallets_controller.rb:11:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.3ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (166.4ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:40:57 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 3.8ms)
+
+
+  
+NameError (undefined local variable or method `token' for #<CardWalletsController:0x00007f73f053f730>):
+  
+app/controllers/card_wallets_controller.rb:11:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (156.5ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:41:14 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 5.1ms)
+
+
+  
+NoMethodError (undefined method `to_d' for #<CreditCard:0x00007f73f0d0cb48>):
+  
+lib/card_wallet_assitance_class.rb:36:in `block in get_max_available_limit'
+lib/card_wallet_assitance_class.rb:35:in `get_max_available_limit'
+lib/card_wallet_assitance_class.rb:12:in `update_limit'
+app/controllers/card_wallets_controller.rb:11:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.3ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:42:46 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `to_d' for #<CreditCard:0x00007f73f0d0cb48>):
+  
+lib/card_wallet_assitance_class.rb:36:in `block in get_max_available_limit'
+lib/card_wallet_assitance_class.rb:35:in `get_max_available_limit'
+lib/card_wallet_assitance_class.rb:12:in `update_limit'
+app/controllers/card_wallets_controller.rb:11:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.4ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:43:19 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (uninitialized constant CardWalletsController::ApplicationAssistance):
+  
+app/controllers/card_wallets_controller.rb:20:in `check_user_auth'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.7ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.6ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:44:00 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999999999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 200 OK in 170ms (Views: 0.4ms | ActiveRecord: 4.6ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:44:11 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"1.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "card_wallets" SET "limit" = ?, "updated_at" = ? WHERE "card_wallets"."id" = ?[0m  [["limit", "1.99"], ["updated_at", "2017-12-12 22:44:11.981102"], ["id", 3]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 131ms (Views: 0.2ms | ActiveRecord: 89.8ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:45:40 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9898989898981.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 200 OK in 161ms (Views: 0.4ms | ActiveRecord: 4.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:45:48 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.4ms)
+
+
+  
+ArgumentError (invalid value for BigDecimal(): "asdas.99"):
+  
+lib/card_wallet_assitance_class.rb:12:in `update_limit'
+app/controllers/card_wallets_controller.rb:12:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.6ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:47:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 3.4ms)
+
+
+  
+ArgumentError (invalid value for BigDecimal(): "asdas.99"):
+  
+lib/card_wallet_assitance_class.rb:12:in `update_limit'
+app/controllers/card_wallets_controller.rb:12:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.3ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.8ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:55:23 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 3.3ms)
+
+
+  
+NameError (undefined local variable or method `status' for #<CardWalletAssistance:0x000055b5af611970>):
+  
+lib/card_wallet_assitance_class.rb:21:in `update_limit'
+app/controllers/card_wallets_controller.rb:12:in `update_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.2ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 20:58:57 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 0.5ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:00:14 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.5ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:01:09 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:06:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 144ms (Views: 0.4ms | ActiveRecord: 4.0ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:07:43 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asdas.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 40ms (Views: 0.4ms | ActiveRecord: 3.8ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:08:50 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"8989898989.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 204 No Content in 99ms (Views: 0.4ms | ActiveRecord: 7.1ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:09:16 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 204 No Content in 8ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:10:22 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.8ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 204 No Content in 174ms (Views: 0.5ms | ActiveRecord: 5.6ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:10:37 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"asda.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 43ms (Views: 0.4ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:10:41 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"99.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "card_wallets" SET "limit" = ?, "updated_at" = ? WHERE "card_wallets"."id" = ?[0m  [["limit", "99.99"], ["updated_at", "2017-12-12 23:10:41.129605"], ["id", 3]]
+  [1m[35m (97.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 131ms (Views: 0.2ms | ActiveRecord: 98.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:00 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"99.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCardWallet Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:05 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9999999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 204 No Content in 11ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:08 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"99999.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 204 No Content in 11ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:16 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9999a9.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 18ms (Views: 0.8ms | ActiveRecord: 9.1ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:51 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"9999a9.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 18ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:11:56 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999909.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 204 No Content in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:12:07 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"999909.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.4ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 3]]
+Completed 200 OK in 189ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:15:38 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+lib/card_wallet_assitance_class.rb:27:in `read_limit'
+app/controllers/card_wallets_controller.rb:16:in `read_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:16:11 -0200
+  
+ActionController::RoutingError (undefined local variable or method `request' for CardWalletsController:Class):
+  
+app/controllers/card_wallets_controller.rb:7:in `<class:CardWalletsController>'
+app/controllers/card_wallets_controller.rb:4:in `<top (required)>'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (9.9ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.1ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.8ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:16:40 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (undefined local variable or method `request' for CardWalletsController:Class):
+  
+app/controllers/card_wallets_controller.rb:7:in `<class:CardWalletsController>'
+app/controllers/card_wallets_controller.rb:4:in `<top (required)>'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (8.9ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (19.1ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.4ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:18:59 -0200
+  
+ActionController::RoutingError (undefined method `request' for CardWalletsController:Class):
+  
+app/controllers/card_wallets_controller.rb:7:in `<class:CardWalletsController>'
+app/controllers/card_wallets_controller.rb:4:in `<top (required)>'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (7.7ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.7ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:19:17 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 21:38:33 -0200
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"900.99", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."card_wallet_id" = ?[0m  [["card_wallet_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCardWallet Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? AND ("card_wallets"."id" != ?) LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "card_wallets" SET "limit" = ?, "updated_at" = ? WHERE "card_wallets"."id" = ?[0m  [["limit", "900.99"], ["updated_at", "2017-12-12 23:38:33.636571"], ["id", 1]]
+  [1m[35m (131.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 215ms (Views: 0.3ms | ActiveRecord: 136.5ms)
+
+
+Started PUT "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:38:42 -0200
+  
+ActionController::RoutingError (No route matches [PUT] "/card_wallets/read_limit"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (7.6ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.3ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 21:38:51 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AdjustDbSchema (20171213000739)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "paid_withs"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "user_wallets"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acredit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "tindex_acredit_cards_on_card_wallet_id" ON "acredit_cards" ("card_wallet_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "acredit_cards" ("id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","used_credit","expire_year","billing_month","card_wallet_id")
+                     SELECT "id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","current_balance","expire_year","billing_month","card_wallet_id" FROM "credit_cards"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "credit_cards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acredit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acredit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "credit_cards" ("id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","used_credit","expire_year","billing_month","card_wallet_id")
+                     SELECT "id","card_nr","print_name","billing_date","expire_month","cvv","limit","created_at","updated_at","used_credit","expire_year","billing_month","card_wallet_id" FROM "acredit_cards"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acredit_cards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171213000739"]]
+  [1m[35m (103.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_purchase_id_and_credit_card_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_purchase_id_and_credit_card_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_card_wallets_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_credit_cards_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 22:34:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"ALLALA", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:34:19 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:37:11 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["updated_at", "2017-12-13 00:37:12.854626"], ["id", 1]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 920ms (Views: 0.4ms | ActiveRecord: 98.2ms)
+
+
+Started POST "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:37:26 -0200
+  
+ActionController::RoutingError (No route matches [POST] "/card_wallets/read_limit"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (8.3ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.5ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:37:30 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/card_wallets_controller.rb:16:in `+'
+app/controllers/card_wallets_controller.rb:16:in `read_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.5ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.2ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:39:23 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.5ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/card_wallets_controller.rb:16:in `+'
+app/controllers/card_wallets_controller.rb:16:in `read_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.5ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.6ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:40:27 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.6ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/card_wallets_controller.rb:16:in `+'
+app/controllers/card_wallets_controller.rb:16:in `read_limit'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.2ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.7ms)
+Started PUT "/card_wallets/update_limit" for 127.0.0.1 at 2017-12-12 22:42:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CardWalletsController#update_limit as HTML
+  Parameters: {"Limite"=>"ALLALA", "card_wallet"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:11 -0200
+  
+ActionController::RoutingError (No route matches [PUT] "/card_wallets/read_limit"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (7.6ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.4ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.0ms)
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:15 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "a72c560ec093a669f951398715ce330c4a23dcedf65a7a1afa0f92b97af747e1"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:25 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:28 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:28 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:29 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:29 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:30 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:30 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:42:31 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:43:51 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/card_wallets/read_limit" for 127.0.0.1 at 2017-12-12 22:43:52 -0200
+Processing by CardWalletsController#read_limit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (101.4ms)[0m  [1m[35mCREATE TABLE "CreditCards_Purchases" ("purchase_id" integer NOT NULL, "credit_card_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id" ON "CreditCards_Purchases" ("credit_card_id", "purchase_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id" ON "CreditCards_Purchases" ("purchase_id", "credit_card_id")[0m
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE TABLE "card_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (109.9ms)[0m  [1m[35mCREATE  INDEX "index_card_wallets_on_user_id" ON "card_wallets" ("user_id")[0m
+  [1m[35m (111.5ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (110.4ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (99.6ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_card_wallet_id" ON "purchases" ("card_wallet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (106.8ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_user_id" ON "purchases" ("user_id")[0m
+  [1m[35m (110.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "cpf" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "authentication_token" varchar(30), "encrypted_password" varchar)[0m
+  [1m[35m (99.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (100.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (74.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171213000739)[0m
+  [1m[35m (110.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171210154919),
+(20171210135620),
+(20171203192106),
+(20171120232600),
+(20171212160410),
+(20171205233457),
+(20171208003949),
+(20171204043200),
+(20171117074905),
+(20171202192135),
+(20171212012001),
+(20171207000710),
+(20171203230125),
+(20171210055907);
+
+[0m
+  [1m[35m (153.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-13 00:46:06.453666"], ["updated_at", "2017-12-13 00:46:06.453666"]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE TABLE "CreditCards_Purchases" ("purchase_id" integer NOT NULL, "credit_card_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (109.3ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id" ON "CreditCards_Purchases" ("credit_card_id", "purchase_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (109.4ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id" ON "CreditCards_Purchases" ("purchase_id", "credit_card_id")[0m
+  [1m[35m (109.9ms)[0m  [1m[35mCREATE TABLE "card_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (110.5ms)[0m  [1m[35mCREATE  INDEX "index_card_wallets_on_user_id" ON "card_wallets" ("user_id")[0m
+  [1m[35m (110.3ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (97.9ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (100.6ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_card_wallet_id" ON "purchases" ("card_wallet_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (108.7ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_user_id" ON "purchases" ("user_id")[0m
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "cpf" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "authentication_token" varchar(30), "encrypted_password" varchar)[0m
+  [1m[35m (111.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (99.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (83.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171213000739)[0m
+  [1m[35m (103.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171210154919),
+(20171210135620),
+(20171203192106),
+(20171120232600),
+(20171212160410),
+(20171205233457),
+(20171208003949),
+(20171204043200),
+(20171117074905),
+(20171202192135),
+(20171212012001),
+(20171207000710),
+(20171203230125),
+(20171210055907);
+
+[0m
+  [1m[35m (122.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-13 00:46:08.276906"], ["updated_at", "2017-12-13 00:46:08.276906"]]
+  [1m[35m (104.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-12 22:47:05 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#add_users as HTML
+  Parameters: {"_json"=>[{"Nome"=>"Oberdan", "Sobrenome"=>"de Abreu Araujo", "CPF"=>"13476531716", "email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "Senha Confirmacao"=>"123456"}, {"Nome"=>"Adao", "Sobrenome"=>"Adones", "CPF"=>"13476531717", "email"=>"adam@adam.com.br", "Senha"=>"242456", "Senha Confirmacao"=>"242456"}, {"Nome"=>"Maria", "Sobrenome"=>"de Lourdes", "CPF"=>"13476531719", "email"=>"maria@lourdes.com.br", "Senha"=>"123456", "Senha Confirmacao"=>"123456"}], "user"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Oberdan"], ["last_name", "de Abreu Araujo"], ["cpf", "13476531716"], ["email", "oberdan@oberdan.com.br"], ["created_at", "2017-12-13 00:47:07.279114"], ["updated_at", "2017-12-13 00:47:07.279114"], ["encrypted_password", "$2a$11$qkTStOLjlIyooshka88i4eVa3j0CittbFaaOUUucDvjQZd8el4lg."]]
+  [1m[36mCardWallet Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (97.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Adao"], ["last_name", "Adones"], ["cpf", "13476531717"], ["email", "adam@adam.com.br"], ["created_at", "2017-12-13 00:47:07.403141"], ["updated_at", "2017-12-13 00:47:07.403141"], ["encrypted_password", "$2a$11$3iFa.16H95XGoS23AOP3zutnwJEIT/j0cZTfxUrK.Gy5QTKmI0qGS"]]
+  [1m[36mCardWallet Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Maria"], ["last_name", "de Lourdes"], ["cpf", "13476531719"], ["email", "maria@lourdes.com.br"], ["created_at", "2017-12-13 00:47:07.501072"], ["updated_at", "2017-12-13 00:47:07.501072"], ["encrypted_password", "$2a$11$qFnfYABkxgJ5QXt085eqE.Cr/DvMWkP6n7rcHT2Z8l23rv1snpMgG"]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (109.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 1418ms (Views: 0.5ms | ActiveRecord: 300.0ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 22:47:29 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123457", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123497", "Nome Impresso"=>"Maria de Lourdes", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}], "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "ef739aa8bc8f298ebf6635cca421aca2a687193ed2cc9eca41da20d5f4f23102"], ["LIMIT", 1]]
+Filter chain halted as :check_user_auth rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:48:18 -0200
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["updated_at", "2017-12-13 00:48:18.958296"], ["id", 1]]
+  [1m[35m (93.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 895ms (Views: 0.4ms | ActiveRecord: 95.0ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 22:49:08 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00", "Saldo Consumido"=>"1000.00"}], "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'current_balance' for CreditCard.):
+  
+lib/credit_card_assistance_class.rb:57:in `block in add_cards'
+lib/credit_card_assistance_class.rb:55:in `each'
+lib/credit_card_assistance_class.rb:55:in `add_cards'
+app/controllers/credit_cards_controller.rb:24:in `add_card'
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.6ms)
+  Rendering /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.7ms)
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 22:50:04 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00", "Saldo Consumido"=>"1000.00"}], "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.4ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "e6fd05f2cc316f34f23c6b787e05be32bf91a87aec69c4b66cf117f7883a6acd"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.1ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" IS NULL LIMIT ?[0m  [["card_nr", "1234567890123456"], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" IS NULL LIMIT ?[0m  [["card_nr", "1234567890123466"], ["LIMIT", 1]]
+Completed 201 Created in 158ms (Views: 0.3ms | ActiveRecord: 4.7ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE "CreditCards_Purchases" ("purchase_id" integer NOT NULL, "credit_card_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id" ON "CreditCards_Purchases" ("credit_card_id", "purchase_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id" ON "CreditCards_Purchases" ("purchase_id", "credit_card_id")[0m
+  [1m[35m (111.5ms)[0m  [1m[35mCREATE TABLE "card_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (97.6ms)[0m  [1m[35mCREATE  INDEX "index_card_wallets_on_user_id" ON "card_wallets" ("user_id")[0m
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (109.9ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_card_wallet_id" ON "purchases" ("card_wallet_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (111.3ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_user_id" ON "purchases" ("user_id")[0m
+  [1m[35m (103.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "cpf" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "authentication_token" varchar(30), "encrypted_password" varchar)[0m
+  [1m[35m (120.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (99.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (78.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171213000739)[0m
+  [1m[35m (99.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171210154919),
+(20171210135620),
+(20171203192106),
+(20171120232600),
+(20171212160410),
+(20171205233457),
+(20171208003949),
+(20171204043200),
+(20171117074905),
+(20171202192135),
+(20171212012001),
+(20171207000710),
+(20171203230125),
+(20171210055907);
+
+[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-13 00:52:06.416113"], ["updated_at", "2017-12-13 00:52:06.416113"]]
+  [1m[35m (86.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (78.7ms)[0m  [1m[35mCREATE TABLE "CreditCards_Purchases" ("purchase_id" integer NOT NULL, "credit_card_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (121.4ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id" ON "CreditCards_Purchases" ("credit_card_id", "purchase_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_CreditCards_Purchases_on_credit_card_id_and_purchase_id' AND type='index'
+[0m
+  [1m[35m (135.1ms)[0m  [1m[35mCREATE  INDEX "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id" ON "CreditCards_Purchases" ("purchase_id", "credit_card_id")[0m
+  [1m[35m (131.8ms)[0m  [1m[35mCREATE TABLE "card_wallets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  [1m[35m (150.9ms)[0m  [1m[35mCREATE  INDEX "index_card_wallets_on_user_id" ON "card_wallets" ("user_id")[0m
+  [1m[35m (236.1ms)[0m  [1m[35mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_nr" varchar, "print_name" varchar, "billing_date" integer, "expire_month" integer, "cvv" varchar, "limit" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_credit" varchar, "expire_year" integer, "billing_month" integer, "card_wallet_id" integer)[0m
+  [1m[35m (110.0ms)[0m  [1m[35mCREATE  INDEX "index_credit_cards_on_card_wallet_id" ON "credit_cards" ("card_wallet_id")[0m
+  [1m[35m (110.8ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "card_wallet_id" integer)[0m
+  [1m[35m (97.7ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_card_wallet_id" ON "purchases" ("card_wallet_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_purchases_on_card_wallet_id' AND type='index'
+[0m
+  [1m[35m (111.6ms)[0m  [1m[35mCREATE  INDEX "index_purchases_on_user_id" ON "purchases" ("user_id")[0m
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "cpf" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "authentication_token" varchar(30), "encrypted_password" varchar)[0m
+  [1m[35m (101.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (98.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (87.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171213000739)[0m
+  [1m[35m (110.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171210154919),
+(20171210135620),
+(20171203192106),
+(20171120232600),
+(20171212160410),
+(20171205233457),
+(20171208003949),
+(20171204043200),
+(20171117074905),
+(20171202192135),
+(20171212012001),
+(20171207000710),
+(20171203230125),
+(20171210055907);
+
+[0m
+  [1m[35m (120.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-13 00:52:08.456784"], ["updated_at", "2017-12-13 00:52:08.456784"]]
+  [1m[35m (124.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-12 22:52:36 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#add_users as HTML
+  Parameters: {"_json"=>[{"Nome"=>"Oberdan", "Sobrenome"=>"de Abreu Araujo", "CPF"=>"13476531716", "email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "Senha Confirmacao"=>"123456"}, {"Nome"=>"Adao", "Sobrenome"=>"Adones", "CPF"=>"13476531717", "email"=>"adam@adam.com.br", "Senha"=>"242456", "Senha Confirmacao"=>"242456"}, {"Nome"=>"Maria", "Sobrenome"=>"de Lourdes", "CPF"=>"13476531719", "email"=>"maria@lourdes.com.br", "Senha"=>"123456", "Senha Confirmacao"=>"123456"}], "user"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Oberdan"], ["last_name", "de Abreu Araujo"], ["cpf", "13476531716"], ["email", "oberdan@oberdan.com.br"], ["created_at", "2017-12-13 00:52:37.789510"], ["updated_at", "2017-12-13 00:52:37.789510"], ["encrypted_password", "$2a$11$P9B3SKXDdGiG1T2tVTZE7uUUISIRYAl0femJEEPL23VF1SpGhSjly"]]
+  [1m[36mCardWallet Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "card_wallets" ("limit", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["limit", "0.00"], ["created_at", "2017-12-13 00:52:37.796965"], ["updated_at", "2017-12-13 00:52:37.796965"], ["user_id", 1]]
+  [1m[35m (125.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Adao"], ["last_name", "Adones"], ["cpf", "13476531717"], ["email", "adam@adam.com.br"], ["created_at", "2017-12-13 00:52:37.932681"], ["updated_at", "2017-12-13 00:52:37.932681"], ["encrypted_password", "$2a$11$0IrwVNK9B3pgFOYCnxKo1OyweabZs2r8TkYNApBz1.tiQGtd3SrI6"]]
+  [1m[36mCardWallet Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "card_wallets" ("limit", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["limit", "0.00"], ["created_at", "2017-12-13 00:52:37.937728"], ["updated_at", "2017-12-13 00:52:37.937728"], ["user_id", 2]]
+  [1m[35m (79.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@lourdes.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "cpf", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Maria"], ["last_name", "de Lourdes"], ["cpf", "13476531719"], ["email", "maria@lourdes.com.br"], ["created_at", "2017-12-13 00:52:38.027558"], ["updated_at", "2017-12-13 00:52:38.027558"], ["encrypted_password", "$2a$11$Oa5GRcyhhmA6KGzrcnAr/eSFqtMxvUUi9u6U/akpfbvNMAIhIZuXG"]]
+  [1m[36mCardWallet Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "card_wallets" ("limit", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["limit", "0.00"], ["created_at", "2017-12-13 00:52:38.037010"], ["updated_at", "2017-12-13 00:52:38.037010"], ["user_id", 3]]
+  [1m[35m (90.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 1445ms (Views: 0.5ms | ActiveRecord: 308.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:53:12 -0200
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"1233456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 338ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:57:30 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"1232456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 375ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:58:56 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"1232456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+Completed 400 Bad Request in 376ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2017-12-12 22:59:02 -0200
+Processing by UsersController#sign_in as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "user"=>{"email"=>"oberdan@oberdan.com.br"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "oberdan@oberdan.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["updated_at", "2017-12-13 00:59:03.915949"], ["id", 1]]
+  [1m[35m (105.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1239ms (Views: 0.3ms | ActiveRecord: 112.2ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 22:59:29 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", ""], ["LIMIT", 1]]
+Filter chain halted as :check_user_auth rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 22:59:35 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"email"=>"oberdan@oberdan.com.br", "Senha"=>"123456", "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", ""], ["card_wallet_id", 1], ["LIMIT", 1]]
+Completed 201 Created in 132ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/credit_cards/add_card" for 127.0.0.1 at 2017-12-12 23:00:10 -0200
+Processing by CreditCardsController#add_card as HTML
+  Parameters: {"_json"=>[{"Numero Cartao"=>"1234567890123456", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"2000.00", "Saldo Consumido"=>"0.00"}, {"Numero Cartao"=>"1234567890123466", "Nome Impresso"=>"Oberdan Araujo", "Dia de Cobranca"=>"14", "Mes de Cobranca"=>"07", "Mes de Expiracao"=>"01", "Ano de Expiracao"=>"2019", "CVV"=>"678", "Limite"=>"4000.00", "Saldo Consumido"=>"1000.00"}], "credit_card"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[36mCardWallet Load (0.3ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."authentication_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["authentication_token", "053b9de4654c9a31f6b0cdb5c0b661cad421478a8b79b32f3d22a2ca0cc559ff"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "card_wallets".* FROM "card_wallets" WHERE "card_wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["card_wallet_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123456"], ["card_wallet_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "used_credit", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123456"], ["print_name", "Oberdan Araujo"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "2000.00"], ["created_at", "2017-12-13 01:00:10.888185"], ["updated_at", "2017-12-13 01:00:10.888185"], ["used_credit", "0.00"], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 1]]
+  [1m[35m (164.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123466"], ["card_wallet_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCreditCard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "credit_cards" WHERE "credit_cards"."card_nr" = ? AND "credit_cards"."card_wallet_id" = ? LIMIT ?[0m  [["card_nr", "1234567890123466"], ["card_wallet_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "credit_cards" ("card_nr", "print_name", "billing_date", "expire_month", "cvv", "limit", "created_at", "updated_at", "used_credit", "expire_year", "billing_month", "card_wallet_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["card_nr", "1234567890123466"], ["print_name", "Oberdan Araujo"], ["billing_date", 14], ["expire_month", 1], ["cvv", "678"], ["limit", "4000.00"], ["created_at", "2017-12-13 01:00:11.063783"], ["updated_at", "2017-12-13 01:00:11.063783"], ["used_credit", "1000.00"], ["expire_year", 2019], ["billing_month", 7], ["card_wallet_id", 1]]
+  [1m[35m (78.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 277ms (Views: 0.3ms | ActiveRecord: 246.9ms)
+
+

@@ -1,10 +1,15 @@
  require 'singleton'
+ require 'dao_classes/user_dao'
 
 class CreditCardDao
 	include Singleton
 
-	def get_credit_cards
-		CreditCard.all
+	def get_credit_cards(token)
+		user_dao = UserDao.instance()
+		user = user_dao.get_user({:authentication_token => token})
+		if user
+			user.card_wallet.credit_cards
+		end
 	end
 
 	def insert_credit_cards(card_array)

@@ -6,11 +6,11 @@
  class CreditCardAssistance
  	include Singleton
 
-	def list_cards
+	def list_cards(token)
 		ccards_dao = CreditCardDao.instance()
 
 		#realiza a consulta ao banco
-		credit_cards = ccards_dao.get_credit_cards()
+		credit_cards = ccards_dao.get_credit_cards(token)
 
 		#inicializa o dado de retorno
 		user_cards = Array.new
@@ -32,7 +32,6 @@
 		credit_cards_json = user_cards.to_json
 		credit_cards_json
 	end
-
 
  	def add_cards(parsed_json_cards, token)
 
@@ -64,7 +63,7 @@
 	  				:expire_year => c['Ano de Expiracao'],
 	  				:cvv => c['CVV'],
 	  				:limit => c['Limite'],
-	  				:current_balance => "#{(c['Limite'].to_f.truncate(3)*100).to_i}",
+	  				:used_credit => c['Saldo Consumido'],
 	  				:card_wallet => get_user_wallet(token)
 			))
 		end

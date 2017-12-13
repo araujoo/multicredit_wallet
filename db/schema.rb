@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212012001) do
+ActiveRecord::Schema.define(version: 20171213000739) do
 
   create_table "CreditCards_Purchases", id: false, force: :cascade do |t|
     t.integer "purchase_id",    null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171212012001) do
   end
 
   create_table "card_wallets", force: :cascade do |t|
-    t.integer  "limit"
+    t.string   "limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
@@ -34,34 +34,23 @@ ActiveRecord::Schema.define(version: 20171212012001) do
     t.integer  "expire_month"
     t.string   "cvv"
     t.string   "limit"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "current_balance"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "used_credit"
     t.integer  "expire_year"
     t.integer  "billing_month"
     t.integer  "card_wallet_id"
     t.index ["card_wallet_id"], name: "index_credit_cards_on_card_wallet_id"
   end
 
-  create_table "paid_withs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "purchases", force: :cascade do |t|
-    t.integer  "value"
+    t.string   "value"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.integer  "card_wallet_id"
     t.index ["card_wallet_id"], name: "index_purchases_on_card_wallet_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
-  end
-
-  create_table "user_wallets", force: :cascade do |t|
-    t.integer  "limit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

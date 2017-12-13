@@ -12,13 +12,13 @@ class ApplicationAssistance < ApplicationController
 	def sign_in(email, password)
 		user_dao = UserDao.instance()
 		user = user_dao.get_user({:email => email})
-		if !user 
+		if !user || (user && !user.valid_password?(password))
 			text = 'Usuario ou senha invalidos'
-			status = 401
+			status = 400
 		elsif user.authentication_token != nil
 			text = 'Usuario ja autenticado'
 			status = 200
-		elsif user.valid_password?(password)
+		else user.valid_password?(password)
 			user.authentication_token = generate_token
 			user_dao.update_user(user)
 			text = 'Token' + ' ' + user.authentication_token

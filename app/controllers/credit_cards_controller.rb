@@ -6,10 +6,9 @@ class CreditCardsController < ApplicationController
 	before_action :check_user_auth
 
     def list_cards
-		
 		#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
 	  	ccard_assistance = CreditCardAssistance.instance()
-	  	render json:ccard_assistance.list_cards, status: 200
+	  	render json: ccard_assistance.list_cards(request.headers["HTTP_AUTH_TOKEN"]), status: 200
 	end
 
 	def add_card
@@ -43,7 +42,6 @@ class CreditCardsController < ApplicationController
 
 		render json: ccard_assistance.update_card(card), status: 200
 	end
-
 
 	private
 	def check_user_auth

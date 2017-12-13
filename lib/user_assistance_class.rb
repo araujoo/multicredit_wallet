@@ -57,7 +57,7 @@ class UserAssistance
 	  				:email => u['email'],
 	  				:password => u['Senha'],
 	  				:password_confirmation => u['Confirmacao Senha'],
-	  				:card_wallet => CardWallet.new(:limit => 0)
+	  				:card_wallet => CardWallet.new(:limit => "0.00")
   				)
 	  		)
 	  	end
@@ -104,12 +104,5 @@ class UserAssistance
 	  		end
 	  	end
 	  	message.to_json
-	end
-
-	def sign_out
-		email = params[:email]
-		password = params[:Senha]
-		app_assist = ApplicationAssistance.instance()
-		app_assist.sign_in(email, password)
 	end
 end
