@@ -46,7 +46,7 @@ class CreditCardDao
 		#inicializa array de mensagens
 		message = Array.new
 
-  		card = get_card(card_nr)
+  		card = get_card({:card_nr => card_nr})
   		if card != nil
 			if card.delete
 				message.push({
@@ -70,12 +70,12 @@ class CreditCardDao
 		#inicializa o array de mensagens
 		message = Array.new
 
-		if !card.valid?
+		if !card_to_update.valid?
 			message.push({
-				:errors => card.errors.messages
+				:errors => card_to_update.errors.messages
 			})
 		else
-			if card.save
+			if card_to_update.save
 				message.push({
 					:message => "Dados do cartao #{card_to_update['card_nr']} atualizados com sucesso"
 				})
@@ -87,8 +87,8 @@ class CreditCardDao
 		end
 	end
 	
-	def get_card(card_nr)
-		CreditCard.find_by(:card_nr => card_nr)	
+	def get_card(param_hash)
+		CreditCard.where(param_hash).first
 	end
 
 end

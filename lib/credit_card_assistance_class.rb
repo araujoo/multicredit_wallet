@@ -2,6 +2,7 @@
  require 'dao_classes/credit_card_dao'
  require 'dao_classes/user_dao'
  require 'application_assistance'
+ require 'card_wallet_assitance_class'
 
  class CreditCardAssistance
  	include Singleton
@@ -22,10 +23,10 @@
 				"Data de Vencimento" => "#{c.billing_date}\/#{c.billing_month}",
 				"Validade do Cartão" => "#{c.expire_month}\/#{c.expire_year}",
 				"CVV" => "#{c.cvv}",
-				"Limite do Cartão" => "#{sprintf "%.2f", ((c.limit.to_f)/100)}",
+				"Limite do Cartão" => "#{c.limit}",
 				"Cadastrado no dia" => "#{c.created_at}",
 				"Atualizado no dia" => "#{c.updated_at}",
-				"Saldo Atual :" => "#{sprintf "%.2f", ((c.current_balance.to_f)/100)}"
+				"Saldo Atual :" => "#{c.used_credit}"
 			})			
 		end
 		
@@ -55,7 +56,7 @@
 	  	parsed_json_cards_arr.each do |c|
 	  		card_array.push(
 	  			new_credit_card = CreditCard.new(
-	  				:card_nr => c['Numero Cartao'].to_s,
+	  				:card_nr => c['Numero do Cartao'].to_s,
 	  				:print_name => c['Nome Impresso'],
 	  				:billing_date => c['Dia de Cobranca'],
 	  				:billing_month => c['Mes de Cobranca'],
@@ -73,24 +74,28 @@
 		message.to_json
  	end
 
-	def remove_card(card_to_remove)
+	def remove_card(card_to_remove, token)
+		if card_to_remove != nil
+	 		#recupera a instancia da classe DAO
+	 		ccards_dao = CreditCardDao.instance()
+			message = ccards_dao.remove_card(card_to_remove['Numero do Cartao'] )
+			
+			#caso o novo limite maximo seja menor que o limite definido pelo usuario, 
+	 		#alterar o limite para o novo limite maximo
+			c_wallet_assist = CardWalletAssistance.instance()
+	 		c_wallet_assist.adjust_max_wallet_limit(token)
 
- 		#recupera a instancia da classe DAO
- 		ccards_dao = CreditCardDao.instance()
-
-	  	if card_to_remove != nil
-			message = ccards_dao.remove_card(card_to_remove['Numero Cartao'] )
 			message.to_json
 	  	end
 	end
 
-	def update_card(card_to_update)
+	def update_card(card_to_update, token)
 
 		#recupera a instancia da classe DAO
 		ccards_dao = CreditCardDao.instance()
-	  	
+ 	
 	  	if card_to_update != nil
-	  		card = ccards_dao.get_card(card_to_update['Numero Cartao'] )
+	  		card = ccards_dao.get_card({:card_nr => card_to_update['Numero do Cartao']} )
 	  		if card != nil
 	  			if card_to_update['Nome Impresso']
 	  				card.print_name = card_to_update['Nome Impresso']
@@ -117,10 +122,21 @@
 				end
 				
 				if card_to_update['Limite']
-					card.limit = "#{(card_to_update['Limite'].to_f.truncate(3)*100).to_i}"
+					card.limit = card_to_update['Limite']
+				end
+
+				if card_to_update['Saldo Consumido']
+					card.used_credit = card_to_update['Saldo Consumido']
 				end
 
 				message = ccards_dao.update_card(card)
+				ccards_dao.update_card(card)
+
+				#caso tenha ocorrido alteracao no limite
+				if card_to_update['Limite']
+					c_wallet_assist = CardWalletAssistance.instance()
+					c_wallet_assist.adjust_max_wallet_limit(token)
+				end
 			else
 				message = Array.new
 				message.push({
@@ -135,7 +151,7 @@
 		user_dao = UserDao.instance()
 		user = user_dao.get_user({:authentication_token => token})
 		if user
-			user.card_wallet	
+			user.card_wallet
 		end
 	end
  end

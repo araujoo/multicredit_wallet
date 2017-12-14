@@ -5,8 +5,6 @@ require 'dao_classes/card_wallet_dao'
 class CardWalletAssistance
 	include Singleton
 	
-	@card_wallet = nil
-
 	def update_limit(limit_to_update, token)
 
 		card_wallet = get_wallet(token)
@@ -48,11 +46,8 @@ class CardWalletAssistance
 	end
 
 	def get_wallet(token)
-		if @card_wallet == nil
-			card_wallet_dao = CardWalletDao.instance()
-			@card_wallet = card_wallet_dao.get_card_wallet(token)
-		end
-		@card_wallet
+		card_wallet_dao = CardWalletDao.instance()
+		card_wallet_dao.get_card_wallet(token)
 	end
 
 	def get_spendable_lim(token)
@@ -62,5 +57,19 @@ class CardWalletAssistance
 			cards_used_lim = cards_used_lim + c.used_credit.to_d.truncate(2).to_f
 		end
 		read_limit(token).to_d.truncate(2).to_f - cards_used_lim
+	end
+
+	def adjust_max_wallet_limit(token)
+
+		message = Array.new
+
+		card_wallet = get_wallet(token)
+		max_limit = get_max_available_limit(token)
+		if card_wallet.limit.to_d.truncate(2).to_f >= max_limit
+			card_wallet.limit = sprintf("%.2f", max_limit.to_s)
+
+			c_wallet_dao = CardWalletDao.instance()
+			c_wallet_dao.update_card_wallet(card_wallet)
+		end
 	end
 end

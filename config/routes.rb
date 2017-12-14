@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   put 'users/update_user'
 
   get 'card_wallets/read_limit'
+  get 'card_wallets/read_available_credit'
+  get 'card_wallets/read_max_lim_available'
   put 'card_wallets/update_limit'
+
 end

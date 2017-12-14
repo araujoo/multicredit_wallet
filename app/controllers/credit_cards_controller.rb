@@ -30,7 +30,7 @@ class CreditCardsController < ApplicationController
 
 	  	#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
 	  	ccard_assistance = CreditCardAssistance.instance()
-		render json: ccard_assistance.remove_card(card_to_remove), status: 200
+		render json: ccard_assistance.remove_card(card_to_remove, request.headers["HTTP_AUTH_TOKEN"]), status: 200
 	end
 
 	def update_card
@@ -39,8 +39,7 @@ class CreditCardsController < ApplicationController
 
 	  	#recupera a instancia da classe de assistencia para o escopo de cartoes de credito
 	  	ccard_assistance = CreditCardAssistance.instance()
-
-		render json: ccard_assistance.update_card(card), status: 200
+		render json: ccard_assistance.update_card(card, request.headers["HTTP_AUTH_TOKEN"]), status: 200
 	end
 
 	private

@@ -6,16 +6,29 @@ class CardWalletsController < ApplicationController
 	before_action :check_user_auth
 
 	def update_limit
-		#recupera o JSON enviado no corpo da requisicao
 	  	card_wallet_assistance = CardWalletAssistance.instance()
 	  	result = card_wallet_assistance.update_limit(params['Limite'], request.headers["HTTP_AUTH_TOKEN"])
 	  	render json: result[:text], status: result[:status]
 	end
+
 	def read_limit
 	  	card_wallet_assistance = CardWalletAssistance.instance()
-	  	limit = "Limite" + card_wallet_assistance.read_limit(request.headers["HTTP_AUTH_TOKEN"])
-		render json: limit , status: 200
+	  	limit = "Limite: " + card_wallet_assistance.read_limit(request.headers["HTTP_AUTH_TOKEN"])
+		render json: limit.to_json , status: 200
 	end
+
+	def read_available_credit
+	  	card_wallet_assistance = CardWalletAssistance.instance()
+	  	limit = "Credito Disponivel: " + sprintf("%.2f", card_wallet_assistance.get_spendable_lim(request.headers["HTTP_AUTH_TOKEN"]))
+		render json: limit.to_json , status: 200
+	end
+
+	def read_max_lim_available
+	  	card_wallet_assistance = CardWalletAssistance.instance()
+	  	limit = "Maior Limite Possivel: " + sprintf("%.2f", card_wallet_assistance.get_max_available_limit(request.headers["HTTP_AUTH_TOKEN"]))
+		render json: limit.to_json , status: 200
+	end	
+
 
 	private
 	def check_user_auth
