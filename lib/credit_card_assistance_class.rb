@@ -78,7 +78,7 @@
 		if card_to_remove != nil
 	 		#recupera a instancia da classe DAO
 	 		ccards_dao = CreditCardDao.instance()
-			message = ccards_dao.remove_card(card_to_remove['Numero do Cartao'] )
+			message = ccards_dao.remove_card(token, card_to_remove['Numero do Cartao'] )
 			
 			#caso o novo limite maximo seja menor que o limite definido pelo usuario, 
 	 		#alterar o limite para o novo limite maximo
@@ -95,7 +95,7 @@
 		ccards_dao = CreditCardDao.instance()
  	
 	  	if card_to_update != nil
-	  		card = ccards_dao.get_card({:card_nr => card_to_update['Numero do Cartao']} )
+	  		card = ccards_dao.get_card(token, {:card_nr => card_to_update['Numero do Cartao']} )
 	  		if card != nil
 	  			if card_to_update['Nome Impresso']
 	  				card.print_name = card_to_update['Nome Impresso']

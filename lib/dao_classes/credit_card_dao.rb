@@ -42,11 +42,11 @@ class CreditCardDao
 		message
 	end
 
-	def remove_card(card_nr)
+	def remove_card(token, card_nr)
 		#inicializa array de mensagens
 		message = Array.new
 
-  		card = get_card({:card_nr => card_nr})
+  		card = get_card(token, {:card_nr => card_nr})
   		if card != nil
 			if card.delete
 				message.push({
@@ -75,7 +75,7 @@ class CreditCardDao
 				:errors => card_to_update.errors.messages
 			})
 		else
-			if card_to_update.save
+			if !card_to_update.changed? or card_to_update.save
 				message.push({
 					:message => "Dados do cartao #{card_to_update['card_nr']} atualizados com sucesso"
 				})
@@ -87,8 +87,12 @@ class CreditCardDao
 		end
 	end
 	
-	def get_card(param_hash)
-		CreditCard.where(param_hash).first
+	def get_card(token, param_hash)
+		user_dao = UserDao.instance()
+		user = user_dao.get_user({:authentication_token => token})
+		if user
+			user.card_wallet.credit_cards.where(param_hash).first
+		end
 	end
 
 end

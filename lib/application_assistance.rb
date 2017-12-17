@@ -55,4 +55,21 @@ class ApplicationAssistance < ApplicationController
        		false
     	end
     end
+
+    def calc_days_difference(day)
+    	today = Date.today
+    	date_to_calc = Date.parse("#{today.year}-#{today.month}-#{day}")
+    	
+    	#se a data estiver no passado, realizar a avaliacao considerando o mes seguinte.
+    	#caso o mes fique maior que 12, setar o mes para janeiro e avaliar considerando virada de ano
+    	if date_to_calc.past?
+    		begin 
+    			date_to_calc = Date.parse("#{today.year}-#{today.month+1}-#{day}")
+    		rescue
+    			date_to_calc = Date.parse("#{today.year+1}-01-#{day}")		
+    		end
+    	end
+    	((date_to_calc - today).to_i).abs
+    end
+
 end

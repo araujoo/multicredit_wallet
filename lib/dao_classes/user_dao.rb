@@ -72,7 +72,7 @@ class UserDao
 				:errors => user.errors.messages
 			})
 		else
-			if user.save
+			if !user.changed? or user.save
 				message.push({
 					:message => "Dados do cartao #{user['user_nr']} atualizados com sucesso"
 				})

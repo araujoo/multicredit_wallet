@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get 'card_wallets/read_available_credit'
   get 'card_wallets/read_max_lim_available'
   put 'card_wallets/update_limit'
+  get 'card_wallets/purchases_history'
 
+  post 'purchases/antecipate_payment'
+  post 'purchases/buy'
+  
 end

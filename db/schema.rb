@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213000739) do
-
-  create_table "CreditCards_Purchases", id: false, force: :cascade do |t|
-    t.integer "purchase_id",    null: false
-    t.integer "credit_card_id", null: false
-    t.index ["credit_card_id", "purchase_id"], name: "index_CreditCards_Purchases_on_credit_card_id_and_purchase_id"
-    t.index ["purchase_id", "credit_card_id"], name: "index_CreditCards_Purchases_on_purchase_id_and_credit_card_id"
-  end
+ActiveRecord::Schema.define(version: 20171217144621) do
 
   create_table "card_wallets", force: :cascade do |t|
     t.string   "limit"
@@ -41,6 +34,13 @@ ActiveRecord::Schema.define(version: 20171213000739) do
     t.integer  "billing_month"
     t.integer  "card_wallet_id"
     t.index ["card_wallet_id"], name: "index_credit_cards_on_card_wallet_id"
+  end
+
+  create_table "credit_cards_purchases", id: false, force: :cascade do |t|
+    t.integer "credit_card_id", null: false
+    t.integer "purchase_id",    null: false
+    t.index ["credit_card_id", "purchase_id"], name: "index_credit_cards_purchases_on_credit_card_id_and_purchase_id"
+    t.index ["purchase_id", "credit_card_id"], name: "index_credit_cards_purchases_on_purchase_id_and_credit_card_id"
   end
 
   create_table "purchases", force: :cascade do |t|

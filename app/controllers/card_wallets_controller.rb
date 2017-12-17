@@ -29,6 +29,11 @@ class CardWalletsController < ApplicationController
 		render json: limit.to_json , status: 200
 	end	
 
+	def purchases_history
+	  	card_wallet_assistance = CardWalletAssistance.instance()
+	  	#limit = "Maior Limite Possivel: " + sprintf("%.2f", card_wallet_assistance.get_max_available_limit(request.headers["HTTP_AUTH_TOKEN"]))
+		render json: card_wallet_assistance.get_purchase_history(request.headers["HTTP_AUTH_TOKEN"]), status: 200
+	end	
 
 	private
 	def check_user_auth

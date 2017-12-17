@@ -1,5 +1,4 @@
 require 'singleton'
-require 'dao_classes/user_dao'
 require 'bigdecimal/util'
 require 'dao_classes/card_wallet_dao'
 class CardWalletAssistance
@@ -56,7 +55,10 @@ class CardWalletAssistance
 		card_wallet.credit_cards.each do |c|
 			cards_used_lim = cards_used_lim + c.used_credit.to_d.truncate(2).to_f
 		end
-		read_limit(token).to_d.truncate(2).to_f - cards_used_lim
+		spendable_lim = read_limit(token).to_d.truncate(2).to_f - cards_used_lim
+		if spendable_lim < 0.0
+			spendable_lim = 0.0
+		end
 	end
 
 	def adjust_max_wallet_limit(token)
@@ -71,5 +73,27 @@ class CardWalletAssistance
 			c_wallet_dao = CardWalletDao.instance()
 			c_wallet_dao.update_card_wallet(card_wallet)
 		end
+	end
+
+	def get_purchase_history(token)
+		#message_object = Struct.new(:Valor, :Data, :Cartoes)
+		message = Array.new
+		card_wallet = get_wallet(token)
+		purchases = card_wallet.purchases.sort_by{ |purch| [purch.created_at]}
+		purchases.each_with_index do |p, i|
+			
+			#recupera os cartoes utilizados na compra
+			purch_cards = p.credit_cards
+			
+			#cria um vetor apenas com o numero dos cartoes utilizados na compra
+			purch_cards_arr = Array.new
+
+			#processa os dados para exibicao
+			purch_cards.each do |pc|
+				purch_cards_arr.push(pc.card_nr)
+			end
+			message.push({:Objeto => "#{i+1}", :Valor => p.value, :Date => p.created_at, :Cartoes => purch_cards_arr})
+		end
+		message
 	end
 end
