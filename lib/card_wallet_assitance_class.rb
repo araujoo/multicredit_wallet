@@ -59,6 +59,7 @@ class CardWalletAssistance
 		if spendable_lim < 0.0
 			spendable_lim = 0.0
 		end
+		spendable_lim
 	end
 
 	def adjust_max_wallet_limit(token)

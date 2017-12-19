@@ -27,13 +27,14 @@ class PurchaseAssistance
 				purchase = Purchase.new()
 				purchase.value = value
 				cards_for_payment = get_cards_for_payment(token)
+				remaining_value = value
 				cards_for_payment.each do |c|
 					#se o cartao consumiu todo o limite, busca o proximo cartao para realizar a compra
 					if c.limit == c.used_credit
 						next
 					end
 					#efetua o pagamento
-					remaining_value = execute_payment(value, c, true)
+					remaining_value = execute_payment(remaining_value, c, true)
 
 					#guarda o cartao de credito que foi utilizado para compra
 					purchase.credit_cards.push(c)
@@ -42,7 +43,6 @@ class PurchaseAssistance
 					end
 				end
 				message = 'Pagamento realizado com sucesso'
-				#message = execute_payment(value, CreditCard.first)
 			end
 		rescue
 			message = 'Valor invalido'
@@ -66,7 +66,8 @@ class PurchaseAssistance
 		card = card_dao.get_card(token, {:card_nr => card_nr})
 		if card
 			begin
-				if execute_payment(value, card) <= 0.0
+				value = '-' + value
+				if execute_payment(value, card, false) <= 0.0
 					message = 'Pagamento realizado com sucesso'
 				else
 					message = 'Valor da Compra Excede limite disponivel'

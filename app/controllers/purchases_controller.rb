@@ -6,7 +6,7 @@ class PurchasesController < ApplicationController
 
 	def antecipate_payment
 		purchase_assistance = PurchaseAssistance.instance()
-		render json: purchase_assistance.antecipate_payment(request.headers["HTTP_AUTH_TOKEN"], params["Numero do Cartao"], params["Valor a Pagar"], false), status: 200
+		render json: purchase_assistance.antecipate_payment(request.headers["HTTP_AUTH_TOKEN"], params["Numero do Cartao"], params["Valor"], false), status: 200
 	end
 
 	def buy
