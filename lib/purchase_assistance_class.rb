@@ -18,16 +18,16 @@ class PurchaseAssistance
 
 	def buy(token, value)
 		begin
-			card_wallet = card_wallet_assistance = CardWalletAssistance.instance()
-			limit = card_wallet.get_spendable_lim(token)
+			card_wallet_assistance = CardWalletAssistance.instance()
+			limit = card_wallet_assistance.get_spendable_lim(token)
 			if value.to_d.truncate(2).to_f > limit.to_d.truncate(2).to_f
 				message = 'Valor da Compra Excede limite disponivel'
 			else
 				#cria objeto de registro de compra
 				purchase = Purchase.new()
 				purchase.value = value
-				purchase.card_wallet = card_wallet
-				
+				purchase.card_wallet = card_wallet_assistance.get_wallet(token)
+
 				cards_for_payment = get_cards_for_payment(token)
 				remaining_value = value
 				cards_for_payment.each do |c|
