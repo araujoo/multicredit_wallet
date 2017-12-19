@@ -42,6 +42,9 @@ class PurchaseAssistance
 						break
 					end
 				end
+				if purchase.changed? && purchase.valid?
+					purchase.save
+				end
 				message = 'Pagamento realizado com sucesso'
 			end
 		rescue
