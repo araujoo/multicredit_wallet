@@ -26,6 +26,7 @@ class PurchaseAssistance
 				#cria objeto de registro de compra
 				purchase = Purchase.new()
 				purchase.value = value
+				purchase.card_wallet = card_wallet
 				cards_for_payment = get_cards_for_payment(token)
 				remaining_value = value
 				cards_for_payment.each do |c|
