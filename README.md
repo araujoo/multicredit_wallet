@@ -6,14 +6,25 @@
 * Versao do Rails: Rails 5.0.6
 * Banco de dados utilizado: Sqlite3
 
-##Rotas/Endpoints criados
+##Documentacao
+* Software utilizado para modelagem do diagrama UML: Umbrello
+* Software utilizado para modelagem do DER: draw.io
+* Documentacao das Rotas está descrita na secao abaixo. Diagramas e modelos, sob a pasta "documentation"
 
-* Observacoes
+
+##Consideracoes
 1- Importante ressaltar que caso o usuario nao esteja logado, todos os codigos HTTP serao
 automaticamente setados como 400, seguido de um json informando erro de autorizacao.
 
 2- O processo de autenticacao consiste no envio de um Token gerado pelo servidor que deve ser passado, obrigatoriamente, como parametro <auth_token> no header de toda requisicao. Caso contrário,
 o usuário será considerado não autenticado
+
+3- Para viés de testes, exemplos de json poderão ser encontrados sob a pasta "jsons_samples"
+
+4- Testes foram realizados utilizando SoapUI 5.4.0-EB
+
+
+##Rotas/Endpoints criados
 
 
 **Listar Cartoes**
