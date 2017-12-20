@@ -2,19 +2,19 @@
 
 
 
-##Informacoes Tecnicas
+**Informacoes Tecnicas**
 * Versao do Ruby: ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-linux]
 * Versao do Rails: Rails 5.0.6
 * Banco de dados utilizado: Sqlite3
 
 
-##Documentacao
+**Documentacao**
 * Software utilizado para modelagem do diagrama UML: Umbrello
 * Software utilizado para modelagem do DER: draw.io
 * Documentacao das Rotas está descrita na secao abaixo. Diagramas e modelos, sob a pasta "documentation"
 
 
-##Consideracoes
+**Consideracoes**
 1- Importante ressaltar que caso o usuario nao esteja logado, todos os codigos HTTP serao
 automaticamente setados como 400, seguido de um json informando erro de autorizacao.
 
@@ -26,7 +26,7 @@ o usuário será considerado não autenticado
 4- Testes foram realizados utilizando SoapUI 5.4.0-EB
 
 
-##Rotas/Endpoints criados
+**Rotas/Endpoints criados**
 
 
 **Listar Cartoes**
