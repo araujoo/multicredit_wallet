@@ -15,6 +15,7 @@
 
 
 **Consideracoes**
+
 1- Importante ressaltar que caso o usuario nao esteja logado, todos os codigos HTTP serao
 automaticamente setados como 400, seguido de um json informando erro de autorizacao.
 
