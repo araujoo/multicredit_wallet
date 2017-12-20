@@ -1,7 +1,7 @@
 require 'singleton'
 require 'dao_classes/user_dao'
 
-class ApplicationAssistance < ApplicationController
+class ApplicationAssistance
 
 	include Singleton
 
