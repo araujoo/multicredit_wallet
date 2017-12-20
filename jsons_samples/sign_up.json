@@ -1,0 +1,32 @@
+[
+	{
+	
+		"Nome": "Oberdan",
+		"Sobrenome": "de Abreu Araujo",
+		"CPF": "13476531716",
+		"email": "oberdan@oberdan.com.br",
+		"Senha": "123456",
+		"Senha Confirmacao": "123456"
+	},
+
+	{
+	
+		"Nome": "Adam",
+		"Sobrenome": "Castro",
+		"CPF": "13476531717",
+		"email": "adam@adam.com.br",
+		"Senha": "242456",
+		"Senha Confirmacao": "242456"
+	},	
+
+	{
+	
+		"Nome": "Maria",
+		"Sobrenome": "de Lourdes",
+		"CPF": "13476531719",
+		"email": "maria@lourdes.com.br",
+		"Senha": "123456",
+		"Senha Confirmacao": "123456"
+	}		
+
+]
