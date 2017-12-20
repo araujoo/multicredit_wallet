@@ -35,12 +35,8 @@ class UsersController < ApplicationController
 	end
 
 	def update_user
-		#recupera o JSON enviado no corpo da requisicao
-	  	user = JSON.parse(request.raw_post)
-
 	  	#recupera a instancia da classe de assistencia para o escopo de usuario
 	  	user_assistance = UserAssistance.instance()
-
 		render json: user_assistance.update_user(user), status: 200
 	end
 
