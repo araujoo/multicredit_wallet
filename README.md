@@ -1,10 +1,12 @@
 # README
 
 
+
 ##Informacoes Tecnicas
 * Versao do Ruby: ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-linux]
 * Versao do Rails: Rails 5.0.6
 * Banco de dados utilizado: Sqlite3
+
 
 ##Documentacao
 * Software utilizado para modelagem do diagrama UML: Umbrello
